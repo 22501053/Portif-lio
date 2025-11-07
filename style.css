@@ -1,0 +1,833 @@
+:root {
+    --background-color: #F1F4F1;
+    --texto: #111;
+    --first-button: #6C896C;
+    --secondary-button: #3B4A4A;
+    --textobutton: #90E3D5;
+    --texto2: #ffffff;
+}
+
+body.dark {
+    --background-color: #111;
+    --secondary-button: #3A4A3B;
+    --texto: #ffffff;
+    --first-button: #6C896C;
+    --textobutton: #f4fffd;
+    --texto2: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+/* header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    border-bottom: 1px solid var(--first-button);
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+    z-index: 1000;
+}
+
+header p {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+#meu-nome-espacado {
+    letter-spacing: 9px;
+}
+
+header a {
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--texto);
+    transition: 0.3s;
+}
+
+header a:hover {
+    color: var(--first-button);
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #ccc;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    top: 3px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+input:checked+.slider {
+    background-color: #3B4A4A;
+    box-shadow: 0 0 6px rgba(59, 74, 74, 0.4);
+}
+
+input:checked+.slider::before {
+    transform: translateX(17px);
+    background-color: #f0f0f0;
+}
+
+
+.slider:hover {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* home */
+#home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    height: 100vh;
+    width: 100%;
+}
+
+#home div {
+    height: 100%;
+    width: 50%;
+}
+
+#titulo-portifolio {
+    padding-top: 90px;
+}
+
+#titulo-portifolio h1 {
+    font-family: Josefin Sans, italic;
+    font-size: 100px;
+    line-height: 100%;
+}
+
+#titulo-portifolio P {
+    font-size: 50px;
+}
+
+#titulo-portifolio h2 {
+    font-family: Josefin Sans, italic;
+    font-size: 100px;
+    font-style: italic;
+    letter-spacing: 17px;
+}
+
+#desen {
+    line-height: 10%;
+}
+
+#imagem-portifolio img {
+    border-radius: 50px;
+    width: 100%;
+    height: 85%;
+}
+
+/* sobre-mim */
+#sobre-mim {
+    padding: 40px;
+    height: 100vh;
+    width: 100%;
+}
+
+#organizar_sobre-mim {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70%;
+    width: 100%;
+}
+
+#sobre-mim h1 {
+    font-size: 100px;
+    font-family: Josefin Sans, italic;
+}
+
+#sobre-mim p {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#texto-sobremim1 {
+    height: 100%;
+    width: 50%;
+    text-align: justify;
+    padding: 10px 10px 10px 10px;
+}
+
+#texto-sobremim2 {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: end;
+    padding: 10px 10px 10px 10px;
+}
+
+/* skills */
+#skills {
+    padding: 40px;
+    height: 150vh;
+    width: 100%;
+}
+
+#skills h1 {
+    font-size: 100px;
+    font-family: Josefin Sans, italic;
+}
+
+#skills-card {
+    width: 100%;
+    height: 100%;
+}
+
+.skills-card {
+    width: 100%;
+    height: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    padding: 15px 15px 15px 15px;
+
+}
+
+.hs-skills {
+    height: 70px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--first-button);
+    border-radius: 30px;
+    border: 1px solid #111;
+    color: var(--texto2);
+}
+
+/* projeto */
+#main-projetos {
+    padding: 40px;
+    height: 120vh;
+    width: 100%;
+}
+
+#projeto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.projetos {
+    height: 320px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: var(--first-button);
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.projetos p {
+    font-size: 16px;
+}
+
+.eunseiquenomedar {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.o-que-foi-usado {
+    height: 20px;
+    width: 60px;
+    border-radius: 30px;
+    background-color: var(--secondary-button);
+    text-align: center;
+    color: var(--textobutton);
+}
+
+/* contato */
+#contato {
+    padding: 40px;
+    height: 100vh;
+    width: 100%;
+}
+
+#contato h1 {
+    font-size: 80px;
+    font-family: "Josefin Sans", italic;
+    margin-bottom: 30px;
+}
+
+#separando-as-divs {
+    display: flex;
+}
+
+#separando-as-divs div {
+    width: 50%;
+    height: 100%;
+}
+
+#links-de-contado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 70vh;
+}
+
+.meus-contatos {
+    width: 300px;
+    height: 70px;
+    border: 3px solid var(--secondary-button);
+    background-color: transparent;
+    color: var(--texto);
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 2px;
+}
+
+.meus-contatos:hover {
+    background-color: var(--secondary-button);
+    color: white;
+    transform: scale(1.05);
+}
+
+#contato div h3 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--texto);
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+#contato div p {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 28px;
+    line-height: 1.6;
+    color: var(--texto);
+    max-width: 320px;
+    text-align: justify;
+    margin: 0;
+}
+
+/* rodape */
+footer {
+    background-color: var(--first-button);
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    padding-top: 15px;
+}
+
+/* ===== MODAL ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: var(--background-color);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    text-align: center;
+    color: var(--texto);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.close-modal {
+    margin-top: 25px;
+    background: var(--first-button);
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    background: var(--secondary-button);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Media Queries para Responsividade */
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 3%;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+
+    #meu-nome-espacado {
+        letter-spacing: 6px;
+    }
+
+    header a {
+        margin-left: 15px;
+        font-size: 14px;
+    }
+
+    #home {
+        padding: 20px;
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    #home div {
+        width: 100%;
+        height: auto;
+    }
+
+    #titulo-portifolio {
+        padding-top: 50px;
+        text-align: center;
+    }
+
+    #titulo-portifolio h1 {
+        font-size: 60px;
+    }
+
+    #titulo-portifolio p {
+        font-size: 30px;
+    }
+
+    #titulo-portifolio h2 {
+        font-size: 60px;
+        letter-spacing: 10px;
+    }
+
+    #imagem-portifolio img {
+        height: 400px;
+        margin-top: 20px;
+    }
+
+    #sobre-mim {
+        padding: 20px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    #organizar_sobre-mim {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #sobre-mim h1 {
+        font-size: 60px;
+        text-align: center;
+    }
+
+    #sobre-mim p {
+        font-size: 20px;
+    }
+
+    #texto-sobremim1,
+    #texto-sobremim2 {
+        width: 100%;
+        padding: 20px;
+    }
+
+    #skills {
+        padding: 20px;
+        height: auto;
+        min-height: 150vh;
+    }
+
+    #skills h1 {
+        font-size: 60px;
+        text-align: center;
+    }
+
+    .skills-card {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+        padding: 10px;
+    }
+
+    .hs-skills {
+        width: 200px;
+        height: 50px;
+    }
+
+    #main-projetos {
+        padding: 20px;
+        height: auto;
+        min-height: 120vh;
+    }
+
+    #projeto {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .projetos {
+        height: 250px;
+        padding: 15px;
+    }
+
+    .projetos p {
+        font-size: 14px;
+    }
+
+    .o-que-foi-usado {
+        width: 50px;
+        font-size: 12px;
+    }
+
+    #contato {
+        padding: 20px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    #contato h1 {
+        font-size: 50px;
+    }
+
+    #separando-as-divs {
+        flex-direction: column;
+    }
+
+    #separando-as-divs div {
+        width: 100%;
+    }
+
+    #links-de-contado {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .meus-contatos {
+        width: 250px;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    #contato div h3 {
+        font-size: 25px;
+    }
+
+    #contato div p {
+        font-size: 20px;
+        max-width: none;
+    }
+
+    footer {
+        height: 8vh;
+        padding-top: 10px;
+    }
+
+    .modal-content {
+        padding: 20px;
+        max-width: 90%;
+    }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 2%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    #meu-nome-espacado {
+        letter-spacing: 4px;
+    }
+
+    header a {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    .switch {
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    #home {
+        padding: 10px;
+    }
+
+    #titulo-portifolio h1 {
+        font-size: 40px;
+    }
+
+    #titulo-portifolio p {
+        font-size: 20px;
+    }
+
+    #titulo-portifolio h2 {
+        font-size: 40px;
+        letter-spacing: 5px;
+    }
+
+    #imagem-portifolio img {
+        height: 300px;
+    }
+
+    #sobre-mim h1 {
+        font-size: 40px;
+    }
+
+    #sobre-mim p {
+        font-size: 16px;
+    }
+
+    #skills h1 {
+        font-size: 40px;
+    }
+
+    .skills-card {
+        grid-template-columns: 1fr 1fr;
+        /* Alterado para duas colunas lado a lado */
+        height: auto;
+        padding: 10px;
+        gap: 10px;
+        /* Adicionado gap para espaçamento */
+    }
+
+    .hs-skills {
+        width: 150px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    #projeto {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .projetos {
+        height: 200px;
+        padding: 10px;
+    }
+
+    .projetos p {
+        font-size: 12px;
+    }
+
+    .eunseiquenomedar {
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    .o-que-foi-usado {
+        width: 40px;
+        height: 15px;
+        font-size: 10px;
+    }
+
+    #contato h1 {
+        font-size: 35px;
+    }
+
+    .meus-contatos {
+        width: 200px;
+        height: 50px;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    #contato div h3 {
+        font-size: 20px;
+    }
+
+    #contato div p {
+        font-size: 16px;
+    }
+
+    footer {
+        height: 6vh;
+        padding-top: 5px;
+        font-size: 12px;
+    }
+
+    .modal-content {
+        padding: 15px;
+        max-width: 95%;
+    }
+
+    .close-modal {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Celulares Pequenos (até 480px) */
+@media (max-width: 480px) {
+    header p {
+        font-size: 14px;
+    }
+
+    #meu-nome-espacado {
+        letter-spacing: 2px;
+    }
+
+    header a {
+        margin-left: 5px;
+        font-size: 10px;
+    }
+
+    #titulo-portifolio h1 {
+        font-size: 30px;
+    }
+
+    #titulo-portifolio p {
+        font-size: 16px;
+    }
+
+    #titulo-portifolio h2 {
+        font-size: 30px;
+        letter-spacing: 3px;
+    }
+
+    #imagem-portifolio img {
+        height: 200px;
+    }
+
+    #sobre-mim h1 {
+        font-size: 30px;
+    }
+
+    #sobre-mim p {
+        font-size: 14px;
+    }
+
+    #skills h1 {
+        font-size: 30px;
+    }
+
+    .hs-skills {
+        width: 120px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .projetos {
+        height: 180px;
+        padding: 8px;
+    }
+
+    .projetos p {
+        font-size: 10px;
+    }
+
+    .o-que-foi-usado {
+        width: 35px;
+        height: 12px;
+        font-size: 8px;
+    }
+
+    #contato h1 {
+        font-size: 25px;
+    }
+
+    .meus-contatos {
+        width: 180px;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    #contato div h3 {
+        font-size: 18px;
+    }
+
+    #contato div p {
+        font-size: 14px;
+    }
+
+    footer {
+        height: 5vh;
+        padding-top: 3px;
+        font-size: 10px;
+    }
+
+    .modal-content {
+        padding: 10px;
+    }
+
+    .close-modal {
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+}
